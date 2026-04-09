@@ -3,12 +3,13 @@
  *
  * Responsabilidades:
  *  1. Navbar: adicionar classe "scrolled" ao rolar a página
- *  2. Smooth scroll para links âncora do navbar
- *  3. Validação do formulário de captação de leads
+ *  2. Menu hamburger: toggle nativo (independente do Bootstrap JS)
+ *  3. Smooth scroll para links âncora do navbar
+ *  4. Validação do formulário de captação de leads
  *     - Campos obrigatórios (nome + email)
  *     - Formato de email via regex
  *     - Feedback visual via classes Bootstrap: .is-valid / .is-invalid
- *  4. Redirect para obrigado.html apenas após validação positiva
+ *  5. Redirect para obrigado.html apenas após validação positiva
  */
 
 (function () {
@@ -29,11 +30,55 @@
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // chama uma vez na carga para o estado inicial
+    handleScroll();
   }
 
   /* ------------------------------------------------------------------ */
-  /* 2. SMOOTH SCROLL para links âncora do navbar                         */
+  /* 2. MENU HAMBURGER — toggle nativo, sem depender do Bootstrap JS      */
+  /*                                                                      */
+  /* Motivo: ao abrir a página via file:// em mobile, alguns navegadores  */
+  /* bloqueiam silenciosamente scripts CDN com atributo integrity/        */
+  /* crossorigin, quebrando o data-bs-toggle. A lógica nativa garante     */
+  /* funcionamento em qualquer ambiente (local, servidor, file://).       */
+  /* ------------------------------------------------------------------ */
+  const toggler = document.getElementById('navToggler');
+  const navMenu = document.getElementById('navMenu');
+
+  function openMenu() {
+    navMenu.classList.add('show');
+    toggler.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeMenu() {
+    navMenu.classList.remove('show');
+    toggler.setAttribute('aria-expanded', 'false');
+  }
+
+  if (toggler && navMenu) {
+    // Abre/fecha ao clicar no botão
+    toggler.addEventListener('click', function (e) {
+      e.stopPropagation();
+      navMenu.classList.contains('show') ? closeMenu() : openMenu();
+    });
+
+    // Fecha ao clicar fora do navbar
+    document.addEventListener('click', function (e) {
+      if (navbar && !navbar.contains(e.target) && navMenu.classList.contains('show')) {
+        closeMenu();
+      }
+    });
+
+    // Fecha ao pressionar Escape (acessibilidade)
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navMenu.classList.contains('show')) {
+        closeMenu();
+        toggler.focus();
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* 3. SMOOTH SCROLL para links âncora do navbar                         */
   /* ------------------------------------------------------------------ */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
@@ -45,11 +90,9 @@
 
       e.preventDefault();
 
-      // Fecha o menu mobile do Bootstrap ao clicar em um link âncora
-      const navCollapse = document.querySelector('.navbar-collapse');
-      if (navCollapse && navCollapse.classList.contains('show')) {
-        const bsCollapse = window.bootstrap && bootstrap.Collapse.getInstance(navCollapse);
-        if (bsCollapse) bsCollapse.hide();
+      // Fecha o menu mobile ao clicar em um link âncora
+      if (navMenu && navMenu.classList.contains('show')) {
+        closeMenu();
       }
 
       // Offset pelo header fixo

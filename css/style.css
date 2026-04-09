@@ -126,6 +126,21 @@ a:hover {
   background-color: rgba(10, 14, 23, 0.98);
 }
 
+/* Menu mobile — transição nativa (substitui a animação do Bootstrap JS) */
+.rb-navbar .navbar-collapse {
+  transition: none; /* Bootstrap anima via JS; como usamos toggle nativo, removemos */
+}
+
+/* Estado aberto: o JS adiciona/remove a classe .show diretamente */
+@media (max-width: 991.98px) {
+  .rb-navbar .navbar-collapse {
+    display: none;           /* oculto por padrão em mobile */
+  }
+  .rb-navbar .navbar-collapse.show {
+    display: block;          /* visível quando aberto */
+  }
+}
+
 /* Brand */
 .rb-brand {
   font-family: var(--font-display);
