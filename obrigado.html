@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Obrigado! — RoadBeginner</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS compartilhado -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      /* Estilos exclusivos da página de agradecimento */
+      .ty-page {
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+        background-color: var(--clr-bg);
+      }
+
+      .ty-card {
+        background-color: var(--clr-surface-2);
+        border: 1px solid var(--clr-border);
+        border-radius: var(--radius-lg);
+        padding: 3rem 2.5rem;
+        text-align: center;
+        max-width: 540px;
+        width: 100%;
+        box-shadow: var(--shadow-card);
+        animation: fadeUp 0.5s ease-out both;
+      }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      .ty-icon {
+        width: 72px;
+        height: 72px;
+        background: var(--clr-accent-glow);
+        border: 2px solid rgba(0, 255, 136, 0.35);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: var(--clr-accent);
+        margin: 0 auto 1.75rem;
+      }
+
+      .ty-title {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 6vw, 3rem);
+        letter-spacing: 0.02em;
+        color: var(--clr-text);
+        margin-bottom: 1rem;
+        line-height: 1.1;
+      }
+
+      .ty-text {
+        font-size: 1rem;
+        color: var(--clr-muted);
+        line-height: 1.7;
+        margin-bottom: 0.5rem;
+      }
+
+      .ty-highlight {
+        font-size: 0.9rem;
+        color: var(--clr-accent);
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
+
+      .ty-divider {
+        border-color: var(--clr-border);
+        margin: 2rem 0;
+      }
+
+      .ty-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--clr-muted);
+        transition: color var(--transition-fast);
+      }
+      .ty-back:hover {
+        color: var(--clr-accent);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="ty-page" role="main">
+      <div class="ty-card" aria-label="Confirmação de recebimento do formulário">
+
+        <!-- Ícone de sucesso -->
+        <div class="ty-icon" aria-hidden="true">
+          <i class="bi bi-check-lg"></i>
+        </div>
+
+        <!-- Título -->
+        <h1 class="ty-title">Chegou! Seu guia está a caminho.</h1>
+
+        <!-- Texto -->
+        <p class="ty-text">
+          Obrigado por se cadastrar. Em instantes você receberá o
+          <strong>Guia Completo de Tóquio</strong> no seu e-mail com
+          roteiro detalhado, frases essenciais em japonês e mapa offline.
+        </p>
+        <p class="ty-highlight">
+          <i class="bi bi-envelope-check-fill me-1" aria-hidden="true"></i>
+          Verifique também sua caixa de spam, só por garantia.
+        </p>
+
+        <hr class="ty-divider" />
+
+        <!-- CTA de volta -->
+        <a href="index.html" class="ty-back" aria-label="Voltar para a página principal">
+          <i class="bi bi-arrow-left" aria-hidden="true"></i>
+          Voltar à página principal
+        </a>
+
+      </div>
+    </div>
+  </body>
+</html>

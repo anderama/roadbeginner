@@ -1,0 +1,673 @@
+/* ==========================================================
+   RoadBeginner — Design System
+   Paleta: Dark bg + neon green accent (inspirado Travelshift)
+   Tipografia: Bebas Neue (display) + Inter (body)
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   1. TOKENS / CUSTOM PROPERTIES
+   ---------------------------------------------------------- */
+:root {
+  /* Colors */
+  --clr-bg:          #0a0e17;
+  --clr-surface:     #111827;
+  --clr-surface-2:   #1a2236;
+  --clr-accent:      #00ff88;
+  --clr-accent-glow: rgba(0, 255, 136, 0.25);
+  --clr-accent-2:    #00d4ff;
+  --clr-danger:      #ff4d6d;
+  --clr-success:     #00ff88;
+  --clr-text:        #f0f6ff;
+  --clr-muted:       #7b8fa6;
+  --clr-border:      rgba(255, 255, 255, 0.08);
+  --clr-overlay:     rgba(5, 8, 15, 0.72);
+
+  /* Typography */
+  --font-display:    'Bebas Neue', sans-serif;
+  --font-body:       'Inter', sans-serif;
+
+  /* Spacing (8pt grid) */
+  --sp-1: 0.5rem;
+  --sp-2: 1rem;
+  --sp-3: 1.5rem;
+  --sp-4: 2rem;
+  --sp-6: 3rem;
+  --sp-8: 4rem;
+  --sp-12: 6rem;
+
+  /* Border radius */
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-pill: 100px;
+
+  /* Transitions */
+  --transition-fast:   150ms ease-out;
+  --transition-base:   250ms ease-out;
+  --transition-slow:   400ms ease-out;
+
+  /* Shadows */
+  --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.45);
+  --shadow-glow:  0 0 24px var(--clr-accent-glow);
+}
+
+/* ----------------------------------------------------------
+   2. RESET & BASE
+   ---------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Remove margin do body para evitar salto no fixed navbar */
+body {
+  padding-top: 70px;
+}
+
+/* Foco visível para acessibilidade */
+:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Links genéricos */
+a {
+  color: var(--clr-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover {
+  color: var(--clr-accent-2);
+}
+
+/* ----------------------------------------------------------
+   3. NAVBAR
+   ---------------------------------------------------------- */
+.rb-navbar {
+  background-color: rgba(10, 14, 23, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--clr-border);
+  min-height: 70px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: background-color var(--transition-slow);
+}
+
+.rb-navbar.scrolled {
+  background-color: rgba(10, 14, 23, 0.98);
+}
+
+/* Brand */
+.rb-brand {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  letter-spacing: 0.03em;
+  color: var(--clr-text) !important;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: opacity var(--transition-fast);
+}
+.rb-brand:hover {
+  opacity: 0.85;
+  color: var(--clr-text) !important;
+}
+.rb-brand-icon {
+  color: var(--clr-accent);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.rb-brand-accent {
+  color: var(--clr-accent);
+}
+
+/* Nav links */
+.rb-navbar .nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--clr-muted) !important;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+.rb-navbar .nav-link:hover,
+.rb-navbar .nav-link:focus {
+  color: var(--clr-text) !important;
+  background-color: var(--clr-border);
+}
+
+/* CTA nav item */
+.rb-nav-cta {
+  color: var(--clr-accent) !important;
+  border: 1px solid rgba(0, 255, 136, 0.3) !important;
+}
+.rb-nav-cta:hover {
+  background-color: var(--clr-accent-glow) !important;
+  color: var(--clr-accent) !important;
+  border-color: var(--clr-accent) !important;
+}
+
+/* Toggler customizado */
+.navbar-toggler {
+  border-color: var(--clr-border) !important;
+  padding: 0.35rem 0.6rem;
+}
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 2px var(--clr-accent-glow);
+}
+
+/* ----------------------------------------------------------
+   4. BOTÕES
+   ---------------------------------------------------------- */
+.rb-btn-primary {
+  background: var(--clr-accent);
+  color: #040810;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.85rem 2.25rem;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.rb-btn-primary:hover,
+.rb-btn-primary:focus {
+  background: #00e07a;
+  color: #040810;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.rb-btn-primary:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: none;
+}
+
+.rb-btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ----------------------------------------------------------
+   5. HERO SECTION
+   ---------------------------------------------------------- */
+.rb-hero {
+  position: relative;
+  min-height: 100svh;
+  background-image: url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1600&q=80&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.rb-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(5, 8, 15, 0.82) 0%,
+    rgba(5, 8, 15, 0.65) 50%,
+    rgba(5, 8, 15, 0.85) 100%
+  );
+  z-index: 0;
+}
+
+/* Eyebrow */
+.rb-hero-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  margin-bottom: var(--sp-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+/* Título Hero */
+.rb-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  color: var(--clr-text);
+  margin-bottom: var(--sp-3);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Subtítulo */
+.rb-hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(240, 246, 255, 0.8);
+  line-height: 1.65;
+  margin-bottom: var(--sp-4);
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA Hero */
+.rb-hero-cta {
+  font-size: 1.05rem;
+  padding: 1rem 2.5rem;
+}
+
+/* Scroll indicator */
+.rb-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(240, 246, 255, 0.45);
+  font-size: 1.5rem;
+  z-index: 1;
+  animation: bounce 2s ease-in-out infinite;
+  transition: color var(--transition-fast);
+}
+.rb-scroll-indicator:hover {
+  color: var(--clr-accent);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ----------------------------------------------------------
+   6. SECTIONS (genérico)
+   ---------------------------------------------------------- */
+.rb-section {
+  padding: var(--sp-12) 0;
+}
+.rb-section--alt {
+  background-color: var(--clr-surface);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+/* Eyebrow de seção */
+.rb-section-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  margin-bottom: var(--sp-1);
+}
+
+/* Título de seção */
+.rb-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--clr-text);
+  margin-bottom: var(--sp-2);
+}
+
+/* Subtítulo de seção */
+.rb-section-subtitle {
+  font-size: 1rem;
+  color: var(--clr-muted);
+  line-height: 1.7;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+/* ----------------------------------------------------------
+   7. CARDS DE LISTA
+   ---------------------------------------------------------- */
+.rb-card {
+  background-color: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.rb-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+/* Card header */
+.rb-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+  padding-bottom: var(--sp-3);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.rb-card-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: var(--clr-accent-glow);
+  border: 1px solid rgba(0, 255, 136, 0.25);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--clr-accent);
+}
+.rb-card-icon--alt {
+  background: rgba(0, 212, 255, 0.15);
+  border-color: rgba(0, 212, 255, 0.25);
+  color: var(--clr-accent-2);
+}
+
+.rb-card-title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ----------------------------------------------------------
+   8. LISTAS
+   ---------------------------------------------------------- */
+.rb-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.rb-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  padding: var(--sp-2);
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+.rb-list-item:hover {
+  background-color: rgba(0, 255, 136, 0.05);
+  border-color: rgba(0, 255, 136, 0.12);
+}
+
+/* Número da lista ordenada */
+.rb-list-number {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--clr-accent);
+  min-width: 2rem;
+  padding-top: 2px;
+}
+
+/* Check icon lista não-ordenada */
+.rb-check-icon {
+  flex-shrink: 0;
+  color: var(--clr-accent-2);
+  font-size: 1.1rem;
+  padding-top: 2px;
+}
+
+/* Conteúdo dos itens */
+.rb-list-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.rb-list-content strong {
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: var(--clr-text);
+}
+.rb-list-content span {
+  font-size: 0.825rem;
+  color: var(--clr-muted);
+  line-height: 1.55;
+}
+
+/* ----------------------------------------------------------
+   9. FORMULÁRIO
+   ---------------------------------------------------------- */
+.rb-form {
+  background-color: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4) var(--sp-4);
+  box-shadow: var(--shadow-card);
+}
+
+@media (min-width: 576px) {
+  .rb-form {
+    padding: var(--sp-6) var(--sp-6);
+  }
+}
+
+.rb-form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--clr-text);
+  margin-bottom: 0.4rem;
+}
+.rb-required {
+  color: var(--clr-accent);
+  margin-left: 2px;
+}
+
+.rb-input {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--clr-text) !important;
+  font-size: 0.95rem !important;
+  padding: 0.75rem 1rem !important;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast) !important;
+  height: auto !important;
+  min-height: 48px;
+}
+
+.rb-input::placeholder {
+  color: var(--clr-muted);
+  opacity: 0.7;
+}
+
+.rb-input:focus {
+  background-color: rgba(255, 255, 255, 0.07) !important;
+  border-color: var(--clr-accent) !important;
+  box-shadow: 0 0 0 3px var(--clr-accent-glow) !important;
+  outline: none !important;
+}
+
+/* Bootstrap is-valid override */
+.rb-input.is-valid {
+  border-color: var(--clr-success) !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2300ff88' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") !important;
+  box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.15) !important;
+}
+
+/* Bootstrap is-invalid override */
+.rb-input.is-invalid {
+  border-color: var(--clr-danger) !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23ff4d6d'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23ff4d6d' stroke='none'/%3e%3c/svg%3e") !important;
+  box-shadow: 0 0 0 3px rgba(255, 77, 109, 0.15) !important;
+}
+
+.invalid-feedback {
+  font-size: 0.8rem;
+  color: var(--clr-danger);
+  margin-top: 0.35rem;
+  display: none;
+}
+.rb-input.is-invalid ~ .invalid-feedback {
+  display: block;
+}
+
+/* Valid feedback */
+.valid-feedback {
+  font-size: 0.8rem;
+  color: var(--clr-success);
+  margin-top: 0.35rem;
+}
+
+/* Submit button full width */
+.rb-btn-submit {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.9rem 1.5rem;
+}
+
+/* Disclaimer abaixo do form */
+.rb-form-disclaimer {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--clr-muted);
+  margin-top: var(--sp-2);
+  margin-bottom: 0;
+}
+
+/* ----------------------------------------------------------
+   10. FOOTER
+   ---------------------------------------------------------- */
+.rb-footer {
+  background-color: var(--clr-surface);
+  border-top: 1px solid var(--clr-border);
+  padding: var(--sp-4) 0;
+}
+
+.rb-footer-credit {
+  font-size: 0.875rem;
+  color: var(--clr-text);
+  font-weight: 500;
+}
+.rb-footer-copy {
+  font-size: 0.8rem;
+  color: var(--clr-muted);
+  margin-top: 0.25rem;
+}
+
+/* Ícones sociais */
+.rb-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--clr-border);
+  color: var(--clr-muted);
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+.rb-social-link:hover {
+  color: var(--clr-accent);
+  border-color: var(--clr-accent);
+  background-color: var(--clr-accent-glow);
+  transform: translateY(-2px);
+}
+
+/* ----------------------------------------------------------
+   11. RESPONSIVIDADE
+   ---------------------------------------------------------- */
+
+/* Telas pequenas: ajustar padding do body */
+@media (max-width: 575.98px) {
+  body {
+    padding-top: 64px;
+  }
+  .rb-section {
+    padding: var(--sp-8) 0;
+  }
+  .rb-hero-title {
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+  }
+  .rb-hero-cta {
+    padding: 0.85rem 1.75rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+  .rb-card {
+    padding: var(--sp-3);
+  }
+  /* Desabilitar parallax em mobile (melhor performance) */
+  .rb-hero {
+    background-attachment: scroll;
+  }
+}
+
+/* Tablets */
+@media (max-width: 767.98px) {
+  .rb-navbar .navbar-collapse {
+    background-color: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    margin-top: 0.5rem;
+    padding: var(--sp-2);
+  }
+  .rb-navbar .nav-link {
+    padding: 0.6rem 1rem;
+    width: 100%;
+  }
+  .rb-nav-cta {
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+}
+
+/* Acessibilidade: preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .rb-hero {
+    background-attachment: scroll;
+  }
+}

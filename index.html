@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Guia definitivo de Tóquio para quem vai viajar pela primeira vez. Dicas, roteiro, checklist de bagagem e muito mais." />
+    <title>RoadBeginner — Tóquio Sem Mistérios</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Google Fonts: Bebas Neue (display) + Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ======================================================
+         NAVBAR
+    ====================================================== -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark rb-navbar fixed-top" aria-label="Navegação principal">
+        <div class="container">
+          <!-- Logo -->
+          <a class="navbar-brand rb-brand" href="#home" aria-label="RoadBeginner — página inicial">
+            <span class="rb-brand-icon" aria-hidden="true"><i class="bi bi-compass"></i></span>
+            Road<span class="rb-brand-accent">Beginner</span>
+          </a>
+
+          <!-- Hamburger -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu"
+            aria-controls="navMenu"
+            aria-expanded="false"
+            aria-label="Abrir/fechar menu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Menu Links -->
+          <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto gap-lg-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#home">Sobre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#guia">Guia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link rb-nav-cta" href="#contato">Contato</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ======================================================
+           HERO SECTION
+      ====================================================== -->
+      <section id="home" class="rb-hero d-flex align-items-center" aria-label="Seção principal — Tóquio">
+        <!-- Overlay escuro sobre a imagem de fundo -->
+        <div class="rb-hero-overlay" aria-hidden="true"></div>
+
+        <div class="container position-relative z-1">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 text-center">
+
+              <p class="rb-hero-eyebrow">
+                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                Tóquio, Japão
+              </p>
+
+              <h1 class="rb-hero-title">
+                Tóquio Sem Mistérios:<br />
+                Seu Primeiro Carimbo<br class="d-none d-md-block" />
+                no Passaporte.
+              </h1>
+
+              <p class="rb-hero-subtitle">
+                O guia definitivo para quem nunca saiu do país<br class="d-none d-md-block" />
+                mas sonha com o Japão.
+              </p>
+
+              <a
+                href="https://www.google.com/flights"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn rb-btn-primary rb-hero-cta"
+                aria-label="Consultar passagens para Tóquio no Google Flights (abre em nova aba)"
+              >
+                <i class="bi bi-airplane-fill me-2" aria-hidden="true"></i>
+                Consultar Passagens Agora
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <a href="#guia" class="rb-scroll-indicator" aria-label="Rolar para a seção Guia">
+          <i class="bi bi-chevron-double-down" aria-hidden="true"></i>
+        </a>
+      </section>
+
+      <!-- ======================================================
+           CONTENT / LISTS SECTION
+      ====================================================== -->
+      <section id="guia" class="rb-section" aria-labelledby="guia-heading">
+        <div class="container">
+
+          <!-- Cabeçalho da seção -->
+          <div class="row justify-content-center mb-5">
+            <div class="col-12 col-md-8 text-center">
+              <p class="rb-section-eyebrow">Planeje com inteligência</p>
+              <h2 id="guia-heading" class="rb-section-title">
+                O que você precisa saber antes de embarcar
+              </h2>
+              <p class="rb-section-subtitle">
+                Informações essenciais organizadas para você chegar em Tóquio com confiança — sem improvisar.
+              </p>
+            </div>
+          </div>
+
+          <!-- Duas colunas -->
+          <div class="row g-4 justify-content-center">
+
+            <!-- Coluna Esquerda: Ranking (Lista Ordenada) -->
+            <div class="col-12 col-md-6 col-lg-5">
+              <div class="rb-card h-100">
+                <div class="rb-card-header">
+                  <span class="rb-card-icon" aria-hidden="true">
+                    <i class="bi bi-trophy-fill"></i>
+                  </span>
+                  <h3 class="rb-card-title">Ranking: 5 Lugares que você NÃO pode perder</h3>
+                </div>
+                <ol class="rb-list rb-list-ranked" aria-label="Ranking dos 5 lugares imperdíveis de Tóquio">
+                  <li class="rb-list-item">
+                    <span class="rb-list-number" aria-hidden="true">01</span>
+                    <div class="rb-list-content">
+                      <strong>Templo Senso-ji</strong>
+                      <span>O templo budista mais antigo de Tóquio, em Asakusa. Vista de tirar o fôlego ao amanhecer.</span>
+                    </div>
+                  </li>
+                  <li class="rb-list-item">
+                    <span class="rb-list-number" aria-hidden="true">02</span>
+                    <div class="rb-list-content">
+                      <strong>Shibuya Crossing</strong>
+                      <span>A famosa "scramble crossing" — o cruzamento mais movimentado do planeta. Deve ser vista ao vivo.</span>
+                    </div>
+                  </li>
+                  <li class="rb-list-item">
+                    <span class="rb-list-number" aria-hidden="true">03</span>
+                    <div class="rb-list-content">
+                      <strong>Monte Fuji (day trip)</strong>
+                      <span>A 2h de Tóquio de shinkansen. A silhueta do Fuji ao pôr do sol é inesquecível.</span>
+                    </div>
+                  </li>
+                  <li class="rb-list-item">
+                    <span class="rb-list-number" aria-hidden="true">04</span>
+                    <div class="rb-list-content">
+                      <strong>Akihabara</strong>
+                      <span>O distrito da tecnologia, dos animes e da cultura pop. Paraíso para qualquer curioso.</span>
+                    </div>
+                  </li>
+                  <li class="rb-list-item">
+                    <span class="rb-list-number" aria-hidden="true">05</span>
+                    <div class="rb-list-content">
+                      <strong>Shinjuku Gyoen</strong>
+                      <span>O jardim nacional perfeito para uma pausa. Na primavera, as cerejeiras fazem a diferença.</span>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Coluna Direita: Checklist (Lista Não Ordenada) -->
+            <div class="col-12 col-md-6 col-lg-5">
+              <div class="rb-card h-100">
+                <div class="rb-card-header">
+                  <span class="rb-card-icon rb-card-icon--alt" aria-hidden="true">
+                    <i class="bi bi-bag-check-fill"></i>
+                  </span>
+                  <h3 class="rb-card-title">Itens que você esquece na primeira viagem</h3>
+                </div>
+                <ul class="rb-list rb-list-check" aria-label="Checklist de bagagem para viagem ao Japão">
+                  <li class="rb-list-item">
+                    <span class="rb-check-icon" aria-hidden="true"><i class="bi bi-check-circle-fill"></i></span>
+                    <div class="rb-list-content">
+                      <strong>Adaptador de tomada</strong>
+                      <span>O Japão usa padrão Tipo A (dois pinos planos). Diferente do padrão brasileiro.</span>
+                    </div>
+                  </li>
+                  <li class="rb-list-item">
+                    <span class="rb-check-icon" aria-hidden="true"><i class="bi bi-check-circle-fill"></i></span>
+                    <div class="rb-list-content">
+                      <strong>Cartão IC (Suica/Pasmo)</strong>
+                      <span>O cartão de transporte recarregável que funciona no metrô, trem e até em lojas de conveniência.</span>
+                    </div>
+                  </li>
+                  <li class="rb-list-item">
+                    <span class="rb-check-icon" aria-hidden="true"><i class="bi bi-check-circle-fill"></i></span>
+                    <div class="rb-list-content">
+                      <strong>Dinheiro em Iene (¥)</strong>
+                      <span>O Japão ainda é muito cash-based. Muitos restaurantes e lojas pequenas não aceitam cartão.</span>
+                    </div>
+                  </li>
+                  <li class="rb-list-item">
+                    <span class="rb-check-icon" aria-hidden="true"><i class="bi bi-check-circle-fill"></i></span>
+                    <div class="rb-list-content">
+                      <strong>Pocket Wi-Fi ou SIM local</strong>
+                      <span>Conectividade é essencial para o Google Maps, tradutor e aplicativos de transporte.</span>
+                    </div>
+                  </li>
+                  <li class="rb-list-item">
+                    <span class="rb-check-icon" aria-hidden="true"><i class="bi bi-check-circle-fill"></i></span>
+                    <div class="rb-list-content">
+                      <strong>Seguro viagem internacional</strong>
+                      <span>Obrigatório. Custos médicos no Japão são altíssimos para quem não tem cobertura.</span>
+                    </div>
+                  </li>
+                  <li class="rb-list-item">
+                    <span class="rb-check-icon" aria-hidden="true"><i class="bi bi-check-circle-fill"></i></span>
+                    <div class="rb-list-content">
+                      <strong>Bateria portátil (power bank)</strong>
+                      <span>Você vai usar o celular o dia todo para mapas. Não saia sem uma carga extra.</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div><!-- /.row -->
+        </div>
+      </section>
+
+      <!-- ======================================================
+           FORM / LEAD GEN SECTION
+      ====================================================== -->
+      <section id="contato" class="rb-section rb-section--alt" aria-labelledby="contato-heading">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+
+              <!-- Cabeçalho do formulário -->
+              <div class="text-center mb-5">
+                <p class="rb-section-eyebrow">Guia gratuito</p>
+                <h2 id="contato-heading" class="rb-section-title">
+                  Receba o Guia Completo de Tóquio
+                </h2>
+                <p class="rb-section-subtitle">
+                  Preencha abaixo e enviaremos o PDF com roteiro detalhado, frases em japonês e mapa offline direto no seu e-mail.
+                </p>
+              </div>
+
+              <!-- Formulário -->
+              <form id="leadsForm" class="rb-form" novalidate aria-label="Formulário para receber o guia de Tóquio">
+
+                <!-- Campo: Nome -->
+                <div class="mb-4">
+                  <label for="inputNome" class="form-label rb-form-label">
+                    Nome completo <span class="rb-required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control rb-input"
+                    id="inputNome"
+                    name="nome"
+                    placeholder="Ex: Maria Oliveira"
+                    autocomplete="name"
+                    aria-required="true"
+                    aria-describedby="nomeError"
+                  />
+                  <div id="nomeError" class="invalid-feedback" role="alert" aria-live="polite">
+                    Por favor, informe seu nome completo.
+                  </div>
+                </div>
+
+                <!-- Campo: E-mail -->
+                <div class="mb-4">
+                  <label for="inputEmail" class="form-label rb-form-label">
+                    E-mail <span class="rb-required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control rb-input"
+                    id="inputEmail"
+                    name="email"
+                    placeholder="Ex: maria@email.com"
+                    autocomplete="email"
+                    aria-required="true"
+                    aria-describedby="emailError"
+                  />
+                  <div id="emailError" class="invalid-feedback" role="alert" aria-live="polite">
+                    Informe um endereço de e-mail válido.
+                  </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="d-grid">
+                  <button type="submit" class="btn rb-btn-primary rb-btn-submit" id="btnSubmit">
+                    <span class="rb-btn-text">
+                      <i class="bi bi-envelope-fill me-2" aria-hidden="true"></i>
+                      Quero receber o Guia Gratuito
+                    </span>
+                    <span class="rb-btn-loading d-none" aria-hidden="true">
+                      <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                      Enviando...
+                    </span>
+                  </button>
+                </div>
+
+                <p class="rb-form-disclaimer">
+                  <i class="bi bi-shield-lock-fill me-1" aria-hidden="true"></i>
+                  Seus dados estão seguros. Sem spam, prometemos.
+                </p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================================================
+         FOOTER
+    ====================================================== -->
+    <footer class="rb-footer" role="contentinfo">
+      <div class="container">
+        <div class="row align-items-center gy-3">
+
+          <!-- Créditos -->
+          <div class="col-12 col-md-6 text-center text-md-start">
+            <p class="rb-footer-credit mb-0">
+              Desenvolvido por <strong>Ander</strong> — Sistemas para Internet
+            </p>
+            <p class="rb-footer-copy mb-0">
+              Copyright &copy; 2026 — Guia de Viagem Inc.
+            </p>
+          </div>
+
+          <!-- Social -->
+          <div class="col-12 col-md-6 text-center text-md-end">
+            <nav aria-label="Links de redes sociais">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rb-social-link"
+                aria-label="GitHub (abre em nova aba)"
+              >
+                <i class="bi bi-github" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rb-social-link"
+                aria-label="LinkedIn (abre em nova aba)"
+              >
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+              </a>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle (Popper included) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmSvR/VbfQdmWIjgejTobzqkm84j"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
