@@ -109,6 +109,17 @@ a:hover {
   padding-top: 0;
   padding-bottom: 0;
   transition: background-color var(--transition-slow);
+  /* z-index explícito garante que o navbar e seus filhos fiquem
+     sempre acima de qualquer stacking context criado por
+     backdrop-filter ou position:relative nas seções abaixo */
+  z-index: 1030;
+}
+
+/* Garante que o botão hamburger seja sempre clicável,
+   mesmo dentro do stacking context do backdrop-filter */
+.rb-navbar .navbar-toggler {
+  position: relative;
+  z-index: 1;
 }
 
 .rb-navbar.scrolled {
